@@ -1,23 +1,48 @@
-public class Employee{
-  String name,city;
-  int age;
-  public void display(){
-     System.out.println("The name is "+ name);
-     System.out.println("The city is "+ city);
-     System.out.println("The age is "+ age);
-  }
+package Employee;
+import java.util.Scanner;
+public class Employee {
+
   public static void main(String[] args){
-    Employee e1=new Employee();
-    Employee e2=new Employee();
-    e1.name="thor";
-    e1.city="asgard";
-    e1.age=20;
-    e2.name="stark";
-    e2.city="Jaipurr";
-    e2.age=15;
-    e1.display();
-    e2.display();
-   
+  int dob,by,salaryM,taxi=0;
+  String name,mobi;
+  Scanner scan = new Scanner(System.in);
+  System.out.println("Enter Details: ");
+  System.out.println("Enter Name: ");
+  name=scan.nextLine();
+  System.out.println("Enter Date of Birth: ");
+  dob=scan.nextInt();
+  System.out.println("Enter Month of Birth: ");
+  mobi=scan.next();
+  System.out.println("Enter Birth Year: ");
+  by=scan.nextInt();
+  System.out.println("Enter Monthly salary: ");
+  salaryM=scan.nextInt();
+  
+  int anulS= salaryM*12;
+  if(anulS >= 500000) {
+	  taxi = (anulS*20)/100;
   }
+  else if(anulS>= 400000) {
+	  taxi= (anulS*15)/100;
+  }
+  else if(anulS>= 300000) {
+	  taxi= (anulS*10)/100;
+  }
+  else if(anulS>= 200000) {
+	  taxi= (anulS*5)/100;
+  }
+  else {
+	  System.out.println("No Tax");
+  }
+   int age=2020-by;
+   System.out.println("Name: "+ name);
+   System.out.println("Age: "+ age);
+   System.out.println("Annual Salary: "+ anulS);
+   System.out.println("Tax Amount: "+ taxi);
+  
+   
+  
+ 
+}
 
 }
